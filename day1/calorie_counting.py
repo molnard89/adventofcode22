@@ -26,4 +26,3 @@ for i in range(n):
     kcal_totals.remove(max_kcal)
 
 print(f"Total calories carried by the top {n} elves = {sum(highest_kcal_list)}")
-
