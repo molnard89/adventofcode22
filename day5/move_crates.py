@@ -9,20 +9,10 @@ def strip_zeros(input_list):
 def parse_initial_setup():
     with open("container_movement_plan.txt", "r") as f:
         container_input = [next(f) for x in range(8)]
-    container_initial_setup = []
-    for line in container_input:
-        container_initial_setup.append(line[1::4])
-    container_initial_config = []
-    for line in container_initial_setup:
-        line_chars = []
-        for char in line:
-            line_chars.append(char)
-        container_initial_config.append(line_chars)
+    container_initial_setup = [line[1::4] for line in container_input]
+    container_initial_config = [[char for char in line] for line in container_initial_setup]
     transposed_array = itertools.zip_longest(*container_initial_config)
-    stacks = []
-    for elem in transposed_array:
-        stacks.append(deque([char for char in elem[-1::-1] if char != ' ']))
-    return stacks
+    return [deque([char for char in elem[-1::-1] if char != ' ']) for elem in transposed_array]
 
 
 if __name__ == "__main__":
