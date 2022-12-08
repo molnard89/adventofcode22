@@ -1,0 +1,23 @@
+$ cd /
+$ cd a_mappa
+$ ls
+2 a_fajl1
+4 a_fajl2
+$ cd ..
+$ cd b_mappa
+$ ls
+dir ba_mappa
+12 b_fajl1
+8 b_fajl2
+$ cd ba_mappa
+$ ls
+7 ba_fajl1
+3 ba_fajl2
+5 ba_fajl3
+$ cd ..
+$ cd ..
+$ ls
+dir a_mappa
+3 fajl1
+dir b_mappa
+8 fajl2
