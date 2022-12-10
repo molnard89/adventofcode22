@@ -3,7 +3,7 @@ from pathlib import Path
 if __name__ == "__main__":
     cwd = Path("/")
     #with open("terminal_output.txt") as f:
-    with open("test_terminal_output.txt") as f:
+    with open("example_input.txt") as f:
         terminal = f.readlines()[1:]
     dir_size_dict = {}
     for i, line in enumerate(terminal):
@@ -31,9 +31,6 @@ if __name__ == "__main__":
     for folder in reference_dict.keys():
         for other_folder, size_in_other_folder in reference_dict.items():
             if (folder != other_folder) and (Path(folder) in [fold for fold in Path(other_folder).parents]):
-                #print(folder)
-                #print(other_folder)
-                #print("*"*50)
                 dir_size_dict[folder] = dir_size_dict[folder] + size_in_other_folder
 
     print(dir_size_dict)
@@ -55,4 +52,4 @@ if __name__ == "__main__":
     for kv in small_directories.items():
         print(kv)
     sum_sizes = sum(small_directories.values())
-    print(f"Total size of large directories = {sum_sizes}")
+    print(f"Total size of small directories = {sum_sizes}")
