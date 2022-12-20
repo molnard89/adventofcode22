@@ -16,7 +16,6 @@ class Rope:
         elif direction == 'L':
             self.head_position[0] -= 1
 
-
     def updateTailPositon(self, direction):
         x_distance, y_distance = self.getDistance()
         if max([abs(x_distance), abs(y_distance)]) < 2:
