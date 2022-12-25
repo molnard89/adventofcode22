@@ -1,6 +1,7 @@
 CYCLES_TO_CHECK = [20, 60, 100, 140, 180, 220]
 
-class signal:
+
+class Signal:
     def __init__(self):
         self.register = 1
         self.cycle = 0
@@ -43,7 +44,7 @@ with open("cpu_commands.txt") as f:
     commands = f.readlines()
 commands = [command.strip() for command in commands]
 
-signal_state = signal()
+signal_state = Signal()
 
 for command in commands:
     signal_state.parseCommand(command)
